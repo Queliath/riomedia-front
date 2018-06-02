@@ -8,10 +8,6 @@ import { Loading } from '../helpers/Loading';
 import { Error } from '../helpers/Error';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchBasicInfo();
   }
