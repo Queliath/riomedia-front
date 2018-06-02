@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const Header = () => (
-  <nav className="navbar alert-dark">
-    <ul className="navbar-nav mr-auto">
+  <nav className="navbar">
+    <ul className="navbar-nav">
       <li className="nav-item">
         <div className="nav-link">
           <NavLink to='/' activeClassName='menu selected' exact>Главная</NavLink>

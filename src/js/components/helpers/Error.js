@@ -4,9 +4,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Error = (props) => (
-  <div className="alert " role="alert">
+  <div className="error" role="error">
     <span className="h4">Unexpected Application Error</span>
-    <p className="ml-5 mt-3">{props.message}</p>
+    <p className="error-text">{props.message}</p>
   </div>
 );
 
