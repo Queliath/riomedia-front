@@ -6,16 +6,16 @@ import { Footer } from './pages/Footer';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 
+
+
 export const AppRouter = () => (
   <BrowserRouter>
     <Fragment>
       <Header />
       <Switch>
-        <div className="container-fluid">
-          <Route path='/' component={HomePage} exact/>
-          <Route path='/about' component={AboutPage}/>
-          <Redirect to="/" />
-        </div>
+        <Route path='/' component={HomePage} exact/>
+        <Route path='/about' component={AboutPage}/>
+        <Redirect to="/" />
       </Switch>
       <Footer />
     </Fragment>
