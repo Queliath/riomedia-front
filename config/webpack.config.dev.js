@@ -132,7 +132,7 @@ module.exports = {
           // A missing `test` is equivalent to a match.
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('file-loader'),
+            loader: require.resolve('url-loader'),
             options: {
               name: 'static/images/[name].[hash:8].[ext]',
             },

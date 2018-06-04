@@ -146,7 +146,7 @@ module.exports = {
           // assets smaller than specified size as data URLs to avoid requests.
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('file-loader'),
+            loader: require.resolve('url-loader'),
             options: {
               name: 'static/images/[name].[hash:8].[ext]',
             },
