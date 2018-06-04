@@ -105,6 +105,7 @@
   "devDependencies": {
     "node-sass": "^4.9.0",
     "react-redux": "^5.0.7",
-    "sass-loader": "^7.0.2"
+    "sass-loader": "^7.0.2",
+    "webpack-merge": "^4.1.2"
   }
 }

@@ -5,8 +5,8 @@ class Header extends Component {
   render() {
     return(
       <header className="header">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <NavLink className="rio-logo" to='/'>Riomedia</NavLink>
+        <nav className="navbar navbar-expand-lg navbar-light bg-white container">
+          <NavLink className="rio-logo" to='/'/>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"/>
           </button>
