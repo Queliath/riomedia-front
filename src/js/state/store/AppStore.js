@@ -6,3 +6,4 @@ import { AppReducer } from '../reducers/AppReducer';
 export const createAppStore = () => {
   return createStore(AppReducer, applyMiddleware(thunk, promiseMiddleware()));
 };
+

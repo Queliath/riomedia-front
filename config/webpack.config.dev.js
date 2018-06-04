@@ -134,9 +134,19 @@ module.exports = {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),
             options: {
-              limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: 'static/images/[name].[hash:8].[ext]',
             },
+          },
+          {
+            test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+            use: [{
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts/',    // where the fonts will go
+                publicPath: '../'       // override the default path
+              }
+            }]
           },
           // Process JS with Babel.
           {
@@ -238,7 +248,7 @@ module.exports = {
             exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: 'static/js/[name].[hash:8].[ext]',
             },
           },
         ],

@@ -14,7 +14,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         {
           this.props.fetched && <div>{this.props.basicInfo.AppName}</div>
         }
@@ -38,7 +38,6 @@ Home.propTypes = {
 };
 
 const mapStateToProps = state => {
-  console.log(state.basicInfo);
   const { fetching, fetched, failed, basicInfo } = state.basicInfo;
 
   return { fetching, fetched, failed, basicInfo };

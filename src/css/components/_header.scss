@@ -1,0 +1,24 @@
+.rio-logo {
+  background-image: image-url('logo.png');
+  height: 52px;
+  width: 150px;
+}
+.selected {
+  color: $black!important;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  padding-right: .5*$spacer!important;
+  padding-left: .5$spacer !important;
+}
+
+/* Fixes dropdown menus placed on the right side */
+.ml-auto .dropdown-menu {
+  left: auto !important;
+  right: 0;
+}

@@ -133,24 +133,33 @@ module.exports = {
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
         oneOf: [
-          // "url" loader works just like "file" loader but it also embeds
-          // assets smaller than specified size as data URLs to avoid requests.
-          {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('url-loader'),
-            options: {
-              limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]',
-            },
-          },
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
               compact: true,
+            },
+          },
+          {
+            test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+            use: [{
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts/',    // where the fonts will go
+                publicPath: '../'       // override the default path
+              }
+            }]
+          },
+          // "url" loader works just like "file" loader but it also embeds
+          // assets smaller than specified size as data URLs to avoid requests.
+          {
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            loader: require.resolve('url-loader'),
+            options: {
+              name: 'static/images/[name].[hash:8].[ext]',
             },
           },
           // The notation here is somewhat confusing.
@@ -275,9 +284,10 @@ module.exports = {
             // by webpacks internal loaders.
             exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
             options: {
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: 'static/js/[name].[hash:8].[ext]',
             },
           },
+
           // ** STOP ** Are you adding a new loader?
           // Make sure to add the new loader(s) before the "file" loader.
         ],
