@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AboutPage = () => (
-  <div className="container-fluid p-3 animated fadeIn">
+  <div className="rio-container p-3 animated fadeIn">
     <h3>РиоМедиа</h3>
     <p>Мы просто супер</p>
     Преимущества:

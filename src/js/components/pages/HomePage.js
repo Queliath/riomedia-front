@@ -14,7 +14,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="rio-container">
         {
           this.props.fetched && <div>{this.props.basicInfo.AppName}</div>
         }

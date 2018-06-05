@@ -1,3 +1,10 @@
 {
-
+  "nav-links": [
+    {
+      "id": "HomePage",
+      "link": "/",
+      "title": "Главная",
+      "sub": []
+    }
+  ]
 }
