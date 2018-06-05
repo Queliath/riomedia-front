@@ -1,10 +1,14 @@
 {
-  "nav-links": [
+  "navLinks": [
     {
       "id": "HomePage",
       "link": "/",
-      "title": "Главная",
-      "sub": []
+      "title": "Главная"
+    },
+    {
+      "id": "AboutPage",
+      "link": "/about",
+      "title": "О нас"
     }
   ]
 }

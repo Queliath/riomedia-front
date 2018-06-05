@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -7,6 +7,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem} from 'reactstrap';
+import { navLinks } from './../../../data/RouterLinks.json';
 
 class Header extends React.Component {
   constructor(props) {
@@ -23,6 +24,13 @@ class Header extends React.Component {
     });
   }
   render() {
+    let navItems = navLinks.map(item => {
+      return (
+        <NavItem>
+          <NavLink to={item.link} className="nav-link" activeClassName='active' exact>{item.title}</NavLink>
+        </NavItem>
+      );
+    });
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -30,12 +38,7 @@ class Header extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink to="/" className="nav-link" activeClassName='active' exact>Главная</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/about" className="nav-link" activeClassName='active'>О нас</NavLink>
-              </NavItem>
+              { navItems }
             </Nav>
           </Collapse>
         </Navbar>
