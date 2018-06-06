@@ -41,47 +41,47 @@
 }
 
 .preloader .preloader-box > div:nth-child(1) {
-  background: #3366FF;
+  background: $purple;
   margin-right: 15px;
   -webkit-animation: movement 600ms ease 0ms infinite alternate;
 }
 .preloader .preloader-box > div:nth-child(2) {
-  background: #3366FF;
+  background: $purple;
   margin-right: 15px;
   -webkit-animation: movement 600ms ease 75ms infinite alternate;
 }
 .preloader .preloader-box > div:nth-child(3) {
-  background: #3366FF;
+  background: $purple;
   margin-right: 15px;
   -webkit-animation: movement 600ms ease 150ms infinite alternate;
 }
 
 .preloader .preloader-box > div:nth-child(4) {
-  background: #3366FF;
+  background: $purple;
   margin-right: 15px;
   -webkit-animation: movement 600ms ease 225ms infinite alternate;
 }
 
 .preloader .preloader-box > div:nth-child(5) {
-  background: #3366FF;
+  background: $purple;
   margin-right: 15px;
   -webkit-animation: movement 600ms ease 300ms infinite alternate;
 }
 
 .preloader .preloader-box > div:nth-child(6) {
-  background: #3366FF;
+  background: $purple;
   margin-right: 15px;
   -webkit-animation: movement 600ms ease 375ms infinite alternate;
 }
 
 .preloader .preloader-box > div:nth-child(7) {
-  background: #3366FF;
+  background: $purple;
   margin-right: 15px;
   -webkit-animation: movement 600ms ease 450ms infinite alternate;
 }
 
 .preloader .preloader-box > div:nth-child(8) {
-  background: #3366FF;
+  background: $purple;
   -webkit-animation: movement 600ms ease 525ms infinite alternate;
 }
 
@@ -93,6 +93,6 @@
   to {
     -webkit-transform: scale(1.5) translateY(-25px) rotateX(45deg);
     box-shadow: 0 25px 40px rgba(0,0,0,0.4);
-    background: #3399FF;
+    background: $blue-rio;
   }
 }
