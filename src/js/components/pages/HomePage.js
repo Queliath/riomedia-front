@@ -38,6 +38,7 @@ Home.propTypes = {
 };
 
 const mapStateToProps = state => {
+  console.log(state);
   const { fetching, fetched, failed, basicInfo } = state.basicInfo;
 
   return { fetching, fetched, failed, basicInfo };

@@ -3,10 +3,14 @@ import { Provider } from 'react-redux';
 import { createAppStore } from '../state/store/AppStore';
 import { AppRouter } from './AppRouter';
 
-export const App = () => (
-  <Provider store={createAppStore()}>
-    <div className="container-full">
-      <AppRouter />
-    </div>
-  </Provider>
-);
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={ createAppStore() }>
+        <AppRouter />
+      </Provider>
+    )
+  }
+}
+
+export {App};

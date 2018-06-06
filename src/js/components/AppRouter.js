@@ -7,12 +7,10 @@ import { Footer } from './pages/Footer';
 
 class AppRouter extends React.Component {
  render() {
-   let links = routes.map(route => {
-     return {
-       path: route.path,
-       label: route.label
-     }
-   });
+   let links = routes.map(route => ({
+     path: route.path,
+     label: route.label
+   }));
    return (
      <BrowserRouter>
        <Fragment>

@@ -32,6 +32,7 @@ class Header extends React.Component {
         </NavItem>
       );
     });
+
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -47,4 +48,5 @@ class Header extends React.Component {
     );
   }
 }
+
 export { Header };
