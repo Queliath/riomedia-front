@@ -9,42 +9,45 @@ import {
   NavItem} from 'reactstrap';
 
 class Header extends React.Component {
+  state = {
+    isOpen: false
+  };
 
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
+  handleNavClick = () => {
+    this.setState({isOpen: false});
+  };
 
-  toggle() {
+
+  toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
-  }
+  };
 
   render() {
-    let navItems = this.props.links.map(item => {
+    let _this= this;
+    let navItems = _this.props.links.map(item => {
       return (
         <NavItem key={item.path}>
-          <NavLink to={item.path} className="nav-link" activeClassName='active' exact>{item.label}</NavLink>
+          <NavLink to={item.path} className="nav-link" activeClassName='active' exact onClick={_this.handleNavClick}>{item.label}</NavLink>
         </NavItem>
       );
     });
 
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">{this.props.appName}</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+      <header className="shadow-sm p-3 mb-2 bg-white">
+        <Navbar className="navbar navbar-expand-md navbar-light container" light expand="md">
+          <NavbarBrand>
+            <NavLink to="/" onClick={_this.handleNavClick}>{_this.props.appName}</NavLink>
+          </NavbarBrand>
+          <NavbarToggler onClick={_this.toggle} />
+          <Collapse isOpen={_this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               { navItems }
             </Nav>
           </Collapse>
         </Navbar>
-      </div>
+      </header>
     );
   }
 }

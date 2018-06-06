@@ -8,6 +8,7 @@ import { MainLoader } from "./helpers/MainLoader";
 import {Error} from "./helpers/Error";
 
 class Main extends Component {
+
   componentDidMount() {
     this.props.fetchBasicInfo();
   }
