@@ -17,10 +17,12 @@ class Router extends React.Component {
      <BrowserRouter>
        <Fragment>
          <Header links={ menuLinks } appName={this.props.basicInfo.AppName}/>
-         <Switch>
-           {routerLinks}
-           <Redirect to="/"/>
-         </Switch>
+         <div className="rio-content">
+           <Switch>
+             {routerLinks}
+             <Redirect to="/"/>
+           </Switch>
+         </div>
          <Footer />
        </Fragment>
      </BrowserRouter>

@@ -4,9 +4,9 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
-  NavItem} from 'reactstrap';
+  NavItem, Row, Col, Container
+} from 'reactstrap';
 
 class Header extends React.Component {
   state = {
@@ -35,18 +35,40 @@ class Header extends React.Component {
     });
 
     return (
-      <header className="shadow-sm p-3 mb-2 bg-white">
-        <Navbar className="navbar navbar-expand-md navbar-light container" light expand="md">
-          <NavbarBrand>
-            <NavLink to="/" onClick={_this.handleNavClick}>{_this.props.appName}</NavLink>
-          </NavbarBrand>
-          <NavbarToggler onClick={_this.toggle} />
-          <Collapse isOpen={_this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              { navItems }
-            </Nav>
-          </Collapse>
-        </Navbar>
+      <header className="mb-2 bg-white">
+        <div className="topbar">
+          <div className="topbarouter">
+            <Container>
+              <Row>
+                <Col xs="6" md="3" lg="3" className="my-2">
+                  ПН-ПТ 08:00-20:00
+                </Col>
+                <Col xs="6" md="3" lg="3" className="my-2">
+                  <a className="topbar-item" href="mailto:riomedia@ramble.ru">riomedia@ramble.ru</a>
+                </Col>
+                <Col xs="6" md="3" lg="3" className="my-2">
+                  <a className="topbar-item tel" href="tel:+37529673222">+375 (29) 67-32-22</a>
+                </Col>
+                <Col xs="6" md="3" lg="3" className="my-2">
+                  <NavLink to="/contacts" className="topbar-item" onClick={_this.handleNavClick}>
+                    Минск , ул. Дзержинского, дом 6
+                  </NavLink>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        <Container>
+          <Navbar className="navbar navbar-expand-md navbar-light py-3" light expand="md">
+            <NavLink key="brand" to="/" className="rio-logo" onClick={_this.handleNavClick}/>
+            <NavbarToggler onClick={_this.toggle} />
+            <Collapse isOpen={_this.state.isOpen} navbar>
+              <Nav className="ml-auto text-uppercase text-nowrap font-weight-bold" navbar>
+                { navItems }
+              </Nav>
+            </Collapse>
+          </Navbar>
+        </Container>
       </header>
     );
   }

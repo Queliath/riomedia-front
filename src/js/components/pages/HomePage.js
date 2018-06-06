@@ -3,10 +3,10 @@ import { Jumbotron, Button, Row, Col, Container } from 'reactstrap';
 class HomePage extends Component {
   render() {
     return (
-      <div className="rio-content">
+      <div className="rio-home">
         <Container>
           <Row>
-            <Col className="col-md-6 col-lg-6 col-xs-12">
+            <Col xs="12" md="7" lg="7" >
               <Jumbotron>
                 <h1 className="display-5">Изготовление наружной рекламы в Минске</h1>
                 <p>

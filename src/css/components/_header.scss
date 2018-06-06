@@ -1,3 +1,31 @@
-.header {
-
+header {
+  .topbar {
+    font-size: 12px;
+    font-weight: 400;
+    background: #323232;
+    color: $gray;
+    height: auto;
+    overflow: inherit;
+    .topbarouter {
+      height: 100%;
+    }
+    .topbar-item {
+      font-size: .8*$spacer;
+      font-weight: 400;
+      color: $gray;
+      text-decoration: none;
+    }
+    .col {
+      margin: 2*$spacer 0;
+    }
+  }
+  .active {
+    color: $blue-sky!important;
+  }
+  .rio-logo {
+    display: block;
+    background: image-url('logo.png') center no-repeat;
+    height: 60px;
+    width: 160px;
+  }
 }
