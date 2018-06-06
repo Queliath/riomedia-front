@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createAppStore } from '../state/store/AppStore';
-import { AppRouter } from './AppRouter';
+import { Router as AppRouter } from "./router/Router";
 
 class App extends React.Component {
   render() {
@@ -12,5 +12,4 @@ class App extends React.Component {
     )
   }
 }
-
-export {App};
+export { App };
