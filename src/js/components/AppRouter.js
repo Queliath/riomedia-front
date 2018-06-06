@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Redirect } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config'
 import { routes } from './AppRouterLinks';
 import { Header } from './pages/header/Header';
@@ -16,6 +16,7 @@ class AppRouter extends React.Component {
        <Fragment>
          <Header links={ links } />
          {renderRoutes(routes)}
+         <Redirect to="/" />
          <Footer />
        </Fragment>
      </BrowserRouter>
