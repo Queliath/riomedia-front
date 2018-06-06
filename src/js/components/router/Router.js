@@ -11,12 +11,12 @@ class Router extends React.Component {
      let path = route.path;
      let label = route.label;
      menuLinks.push({path, label});
-     return <Route path={ path } exact={ route.exact } component={ route.component }/>
+     return <Route key={route.path} path={ path } exact={ route.exact } component={ route.component }/>
    });
    return (
      <BrowserRouter>
        <Fragment>
-         <Header links={ menuLinks } />
+         <Header links={ menuLinks } appName={this.props.basicInfo.AppName}/>
          <Switch>
            {routerLinks}
            <Redirect to="/"/>

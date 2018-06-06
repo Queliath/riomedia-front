@@ -17,3 +17,27 @@ $black: black;
 // Size
 $border-width: 1px;
 $spacer: 1rem;
+
+// Animation
+// Animation properties
+$anim-width:    200px;
+$anim-height:   250px;
+$anim-duration: 4s;
+
+// Splash properties
+$splash-width:  $anim-width;
+$splash-height: $anim-width / 2;
+$splash-origin: $splash-height / 2;
+$water-level:   $splash-origin;
+
+// Drip properties
+$drip-size:     15px;
+$drip-pos:      ($splash-width / 2) - ($drip-size / 2);
+$drip-rebound:  40px;
+$drip-re-size:  5px;
+$drip-re-pos:   ($splash-width / 2) - ($drip-re-size / 2);
+
+// Colours
+$c-drip:        #FFF;
+$c-splash:      #FFF;
+$c-bg:          #43A2CE;

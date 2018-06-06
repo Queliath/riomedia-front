@@ -1,10 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class MainLoader extends React.Component {
-  render() {
-    return (
-      <div className="loader"/>
-    );
-  }
-}
-export { MainLoader }
+const MainLoader = (props) => (
+  <div>
+    {
+      props.busy && <div className="loader"><div className="drip" /></div>
+    }
+  </div>
+);
+
+MainLoader.propTypes = {
+  busy: PropTypes.bool
+};
+
+export { MainLoader };

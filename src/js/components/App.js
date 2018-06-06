@@ -1,13 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types'
-import { Router as AppRouter } from "./router/Router";
-
+import { MainPage } from "./Main";
 class App extends React.Component {
   render() {
     return (
       <Provider store={this.props.store}>
-        <AppRouter />
+        <MainPage />
       </Provider>
     )
   }

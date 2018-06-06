@@ -1,16 +1,120 @@
 .loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: $c-bg;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.drip {
+  width: $anim-width;
+  height: $anim-height;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: $drip-pos;
+    top: 0;
+    content: '';
+    width: $drip-size;
+    height: $drip-size;
+    background-color: $c-drip;
+    border-radius: 50%;
+    opacity: 0;
+    animation: drip $anim-duration ease infinite;
+  }
+
+  &:after {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    border: solid 4*$border-width $c-drip;
+    border-radius: 50%;
+    opacity: 0;
+    animation: splash $anim-duration ease infinite;
+  }
+}
+
+@keyframes drip {
+  10% {
+    top: 0;
+    opacity: 1;
+    animation-timing-function: cubic-bezier(.24,0,.76,.14);
+  }
+  25% {
+    opacity: 1;
+    top: $anim-height - $water-level;
+    animation-timing-function: ease-out;
+    width: $drip-size;
+    height: $drip-size;
+    left: $drip-pos;
+  }
+  30% {
+    opacity: 1;
+    top: $anim-height - ($water-level + $drip-rebound);
+    width: $drip-re-size;
+    height: $drip-re-size;
+    animation-timing-function: ease-in;
+    left: $drip-re-pos;
+  }
+  33% {
+    top: $anim-height - $water-level;
+    opacity: 0;
+    animation-timing-function: ease-out;
+    left: $drip-re-pos;
+  }
+  33.001% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes splash {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    bottom: $splash-height / 2;
+    left: $splash-width / 2;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  25.001% {
+    opacity: 1;
+  }
+  33% {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: $splash-width;
+    height: $splash-height;
+  }
+  33.001% {
+    bottom: $splash-height / 2;
+    left: $splash-width / 2;
+    opacity: 1;
+    width: 0;
+    height: 0;
+  }
+  43% {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: $splash-width;
+    height: $splash-height;
+  }
+  43.001% {
+    opacity: 0;
+  }
 }
