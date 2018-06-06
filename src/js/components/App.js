@@ -6,7 +6,7 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={this.props.store}>
-        <MainPage />
+        <MainPage/>
       </Provider>
     )
   }
