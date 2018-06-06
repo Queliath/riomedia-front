@@ -49,5 +49,4 @@ const mapDispatchToProps = dispatch => (
 
 const HomePage = connect(mapStateToProps, mapDispatchToProps)(Home);
 
-
 export { HomePage };

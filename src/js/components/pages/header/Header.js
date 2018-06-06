@@ -7,27 +7,28 @@ import {
   NavbarBrand,
   Nav,
   NavItem} from 'reactstrap';
-import { navLinks } from './../../../data/RouterLinks.json';
 
 class Header extends React.Component {
+
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
-    let navItems = navLinks.map(item => {
+    let navItems = this.props.links.map(item => {
       return (
-        <NavItem>
-          <NavLink to={item.link} className="nav-link" activeClassName='active' exact>{item.title}</NavLink>
+        <NavItem key={item.path}>
+          <NavLink to={item.path} className="nav-link" activeClassName='active' exact>{item.label}</NavLink>
         </NavItem>
       );
     });
@@ -46,5 +47,4 @@ class Header extends React.Component {
     );
   }
 }
-
 export { Header };
