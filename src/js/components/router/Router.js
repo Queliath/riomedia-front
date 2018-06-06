@@ -8,11 +8,10 @@ class Router extends React.Component {
  render() {
    let menuLinks = [];
    let routerLinks = routes.map(route => {
-     menuLinks.push({
-       path: route.path,
-       label: route.label
-     });
-     return <Route path={ route.path } exact={ route.exact } component={ route.component }/>
+     let path = route.path;
+     let label = route.label;
+     menuLinks.push({path, label});
+     return <Route path={ path } exact={ route.exact } component={ route.component }/>
    });
    return (
      <BrowserRouter>
