@@ -24,6 +24,7 @@ export const BasicInfoReducer = (state = initialState, action) => {
       return propObj;
     }
     case BASIC_INFO_FULFILLED: {
+      localStorage.setItem('basicInfo', JSON.stringify(action.payload));
       propObj.basicInfo = action.payload;
       propObj.fetching = false;
       propObj.fetched = true;
