@@ -1,24 +1,31 @@
-.rio-logo {
-  background-image: image-url('logo.png');
-  height: 52px;
-  width: 150px;
-}
-.selected {
-  color: $black!important;
-}
-
-.navbar-nav {
-  flex-direction: row;
-}
-
-.nav-link {
-  text-transform: uppercase;
-  padding-right: .5*$spacer!important;
-  padding-left: .5$spacer !important;
-}
-
-/* Fixes dropdown menus placed on the right side */
-.ml-auto .dropdown-menu {
-  left: auto !important;
-  right: 0;
+header {
+  .topbar {
+    font-size: 12px;
+    font-weight: 400;
+    background: #323232;
+    color: $gray;
+    height: auto;
+    overflow: inherit;
+    .topbarouter {
+      height: 100%;
+    }
+    .topbar-item {
+      font-size: .8*$spacer;
+      font-weight: 400;
+      color: $gray;
+      text-decoration: none;
+    }
+    .col {
+      margin: 2*$spacer 0;
+    }
+  }
+  .active {
+    color: $blue-sky!important;
+  }
+  .rio-logo {
+    display: block;
+    background: image-url('logo.png') center no-repeat;
+    height: 60px;
+    width: 160px;
+  }
 }

@@ -1,53 +1,116 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import {
+  Jumbotron,
+  Button,
+  Row,
+  Col,
+  Container,
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
 
-import { fetchBasicInfo } from '../../state/actions/BasicInfoActions';
-import { Loading } from '../helpers/Loading';
-import { Error } from '../helpers/Error';
-
-class Home extends Component {
-  componentDidMount() {
-    this.props.fetchBasicInfo();
+const items = [
+  {
+    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
+    altText: 'Slide 1',
+    caption: 'Slide 1'
+  },
+  {
+    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
+    altText: 'Slide 2',
+    caption: 'Slide 2'
+  },
+  {
+    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
+    altText: 'Slide 3',
+    caption: 'Slide 3'
   }
+];
+class HomePage extends Component {
+  state = {
+    activeIndex: 0
+  };
+
+  onExiting = () => {
+    this.animating = true;
+  };
+
+  onExited = () => {
+    this.animating = false;
+  };
+
+  next = () => {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  };
+
+  previous= () => {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  };
+
+  goToIndex =(newIndex) => {
+    if (this.animating) return;
+    this.setState({ activeIndex: newIndex });
+  };
 
   render() {
+    const { activeIndex } = this.state;
+
+    const slides = items.map((item) => {
+      return (
+        <CarouselItem
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+          key={item.src}
+        >
+          <img src={item.src} alt={item.altText} />
+          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        </CarouselItem>
+      );
+    });
+
     return (
-      <div className="container-fluid">
-        {
-          this.props.fetched && <div>{this.props.basicInfo.AppName}</div>
-        }
-        {
-          <Loading busy={this.props.fetching} />
-        }
-        {
-          this.props.failed && <Error message="Failed to fetch basic info" />
-        }
+      <div className="rio-home">
+        <Carousel className="bg-dark d-none d-sm-block"
+          activeIndex={activeIndex}
+          next={this.next}
+          previous={this.previous}
+        >
+          <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+          {slides}
+          <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+          <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        </Carousel>
+        <Container>
+          <Row>
+            <Col xs="12" md="7" lg="7" >
+              <Jumbotron>
+                <h1 className="display-5">Изготовление наружной рекламы в Минске</h1>
+                <p>
+                  Человек, который дорожит своим бизнесом,
+                  ни за что в жизни не станет экономить на рекламе.
+                  Но такое многообразие способов рекламы товаров и услуг заставляет людей долго анализировать
+                  и выбирать изготовителя.
+                </p>
+                <hr className="my-2" />
+                <p>Рекламно - производственная компания «РиоМедиа»
+                  специализируется на изготовлении и размещении наружной рекламы в Минске.
+                  Мы имеем собственную производственную базу и производим объекты наружной рекламы из современных и долговечных материалов.</p>
+                <p className="lead">
+                  <Button color="primary">Заказать рекламу</Button>
+                </p>
+              </Jumbotron>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
 }
-
-Home.propTypes = {
-  fetchBasicInfo: PropTypes.func.isRequired,
-  fetched: PropTypes.bool.isRequired,
-  fetching: PropTypes.bool.isRequired,
-  failed: PropTypes.bool,
-  basicInfo: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => {
-  const { fetching, fetched, failed, basicInfo } = state.basicInfo;
-
-  return { fetching, fetched, failed, basicInfo };
-};
-
-const mapDispatchToProps = dispatch => (
-  bindActionCreators({ fetchBasicInfo }, dispatch)
-);
-
-const HomePage = connect(mapStateToProps, mapDispatchToProps)(Home);
-
-
 export { HomePage };

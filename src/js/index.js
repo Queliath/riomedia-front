@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './components/App';
-import './../css/main.scss';
+import { createAppStore } from './state/store/AppStore';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
+import './../css/main.scss';
 
-ReactDOM.render(<App />, document.getElementById('app'));
-
+ReactDOM.render(<App store={createAppStore()}/>, document.getElementById('app'));
