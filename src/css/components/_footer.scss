@@ -1,0 +1,21 @@
+.footer-container {
+  background: $gray-dark;
+  padding: 3*$spacer;
+  .footer-item {
+    span {
+      display: block;
+      font-size: $spacer;
+      font-weight: 400;
+      line-height: 2*$spacer;
+      color: $gray;
+      text-align: left;
+    }
+    a {
+      font-weight: 300;
+      font-style: normal;
+      color: $white-light;
+      font-size: 1.5*$spacer;
+      line-height: 2*$spacer;
+    }
+  }
+}
