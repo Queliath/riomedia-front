@@ -9,7 +9,6 @@ class Footer extends React.Component {
         <div className="footer-container">
           <Container>
             <Row>
-
               <Col lg="4" md="4" xs="12" className="footer-item">
                 <a className="topbar-item tel" href="tel:+37529673222">+375 (29) 67-32-22</a>
                 <span>Позвоните нам</span>
