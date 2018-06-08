@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types'
 import { MainPage } from "./Main";
+
 class App extends React.Component {
   render() {
     return (
