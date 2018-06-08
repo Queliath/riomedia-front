@@ -11,4 +11,5 @@ function fetchBasicInfoAction() {
     payload: fetchBasicInfo()
   }
 }
+
 export { fetchBasicInfoAction as fetchBasicInfo };
