@@ -1,4 +1,4 @@
-import { fetchBasicInfo } from '../../services/BasicInfo';
+import { fetchBasicInfo } from '../../services/BasicInfoService';
 
 export const BASIC_INFO = 'BASIC_INFO';
 export const BASIC_INFO_PENDING = 'BASIC_INFO_PENDING';
