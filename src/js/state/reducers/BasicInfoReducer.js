@@ -14,7 +14,7 @@ const initialState = {
 export const BasicInfoReducer = (state = initialState, action) => {
   let propObj = {...state};
   switch(action.type) {
-    case BASIC_INFO_PENDING:{
+    case BASIC_INFO_PENDING: {
       return propObj;
     }
     case BASIC_INFO_FULFILLED: {

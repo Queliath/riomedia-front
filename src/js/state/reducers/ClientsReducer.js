@@ -14,7 +14,7 @@ const initialState = {
 export const ClientsReducer = (state = initialState, action) => {
   let propObj = {...state};
   switch(action.type) {
-    case CLIENTS_PENDING:{
+    case CLIENTS_PENDING: {
       return propObj;
     }
     case CLIENTS_FULFILLED: {
