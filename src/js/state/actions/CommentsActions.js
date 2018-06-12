@@ -1,4 +1,4 @@
-import { fetchComments } from '../../services/CommentsService';
+import { fetchCommon } from "../../services/common/CommonFetcher";
 
 export const COMMENTS = 'COMMENTS';
 export const COMMENTS_PENDING = 'COMMENTS_PENDING';
@@ -8,7 +8,7 @@ export const COMMENTS_REJECTED = 'COMMENTS_REJECTED';
 function fetchCommentsAction() {
     return {
         type: COMMENTS,
-        payload: fetchComments()
+        payload: fetchCommon('COMMENTS_SERVICE_URL')
     }
 }
 

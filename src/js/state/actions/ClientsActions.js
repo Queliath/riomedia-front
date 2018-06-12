@@ -1,4 +1,4 @@
-import { fetchClients } from '../../services/ClientsService';
+import { fetchCommon } from "../../services/common/CommonFetcher";
 
 export const CLIENTS = 'CLIENTS';
 export const CLIENTS_PENDING = 'CLIENTS_PENDING';
@@ -8,7 +8,7 @@ export const CLIENTS_REJECTED = 'CLIENTS_REJECTED';
 function fetchClientsAction() {
     return {
         type: CLIENTS,
-        payload: fetchClients()
+        payload: fetchCommon('CLIENTS_SERVICE_URL')
     }
 }
 

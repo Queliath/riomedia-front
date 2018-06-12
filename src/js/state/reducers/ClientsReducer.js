@@ -6,19 +6,13 @@ import {
 
 const initialState = {
     clients: [],
-    fetching: false,
+    fetching: true,
     fetched: false,
     failed: false
 };
 
 export const ClientsReducer = (state = initialState, action) => {
-    let propObj = {
-        ...state,
-        clients: [],
-        fetching: true,
-        fetched: false,
-        failed: false
-    };
+    let propObj = {...state};
     switch(action.type) {
         case CLIENTS_PENDING:{
             return propObj;

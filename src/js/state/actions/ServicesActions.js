@@ -1,5 +1,4 @@
-import { fetchServices } from '../../services/ServicesService';
-import { fetchServiceById } from '../../services/ServicesService';
+import {fetchCommon} from "../../services/common/CommonFetcher";
 
 export const SERVICES = 'SERVICES';
 export const SERVICES_PENDING = 'SERVICES_PENDING';
@@ -14,13 +13,13 @@ export const SERVICE_REJECTED = 'SERVICE_REJECTED';
 function fetchServicesAction() {
     return {
         type: SERVICES,
-        payload: fetchServices()
+        payload: fetchCommon('SERVICES_SERVICE_URL')
     }
 }
 function fetchServiceByIdAction(serviceId) {
     return {
         type: SERVICE,
-        payload: fetchServiceById(serviceId)
+        payload: fetchCommon('SERVICES_SERVICE_URL', null, `/${serviceId}`)
     }
 }
 
