@@ -6,10 +6,10 @@ export const SERVICE_PRICE_TABLE_FULFILLED = 'SERVICE_PRICE_TABLE_FULFILLED';
 export const SERVICE_PRICE_TABLE_REJECTED = 'SERVICE_PRICE_TABLE_REJECTED';
 
 function fetchServicePriceTableAction(serviceId) {
-    return {
-        type: SERVICE_PRICE_TABLE,
-        payload: fetchCommon('SERVICES_SERVICE_URL', null, `/${serviceId}/price-table`)
-    }
+  return {
+    type: SERVICE_PRICE_TABLE,
+    payload: fetchCommon('SERVICES_SERVICE_URL', null, `/${serviceId}/price-table`)
+  }
 }
 
 export { fetchServicePriceTableAction as fetchServicePriceTable };

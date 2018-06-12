@@ -11,16 +11,16 @@ export const SERVICE_FULFILLED = 'SERVICE_FULFILLED';
 export const SERVICE_REJECTED = 'SERVICE_REJECTED';
 
 function fetchServicesAction() {
-    return {
-        type: SERVICES,
-        payload: fetchCommon('SERVICES_SERVICE_URL')
-    }
+  return {
+    type: SERVICES,
+    payload: fetchCommon('SERVICES_SERVICE_URL')
+  }
 }
 function fetchServiceByIdAction(serviceId) {
-    return {
-        type: SERVICE,
-        payload: fetchCommon('SERVICES_SERVICE_URL', null, `/${serviceId}`)
-    }
+  return {
+    type: SERVICE,
+    payload: fetchCommon('SERVICES_SERVICE_URL', null, `/${serviceId}`)
+  }
 }
 
 export { fetchServicesAction as fetchServices };
