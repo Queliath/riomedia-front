@@ -4,6 +4,6 @@ import { BasicInfoReducer } from './BasicInfoReducer';
 import { ClientsReducer } from './ClientsReducer';
 
 export const AppReducer = combineReducers({
-    basicInfo: BasicInfoReducer,
-    clients: ClientsReducer
+  basicInfo: BasicInfoReducer,
+  clients: ClientsReducer
 });

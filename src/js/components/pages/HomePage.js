@@ -78,9 +78,9 @@ class HomePage extends Component {
     return (
       <div className="rio-home">
         <Carousel className="bg-dark d-none d-sm-block"
-          activeIndex={activeIndex}
-          next={this.next}
-          previous={this.previous}
+                  activeIndex={activeIndex}
+                  next={this.next}
+                  previous={this.previous}
         >
           <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
           {slides}
