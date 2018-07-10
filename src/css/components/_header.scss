@@ -1,6 +1,6 @@
 header {
   .topbar {
-    font-size: 12px;
+    font-size: $spacer;
     font-weight: 400;
     background: #323232;
     color: $gray;
@@ -10,7 +10,7 @@ header {
       height: 100%;
     }
     .topbar-item {
-      font-size: .8*$spacer;
+      font-size: $spacer;
       font-weight: 400;
       color: $gray;
       text-decoration: none;
