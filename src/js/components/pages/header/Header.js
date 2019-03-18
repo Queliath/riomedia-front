@@ -1,5 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import {
   Collapse,
   Navbar,
@@ -35,22 +40,30 @@ class Header extends React.Component {
     });
 
     return (
-      <header className="mb-2 bg-white">
+      <header className="bg-white">
         <div className="topbar">
           <div className="topbarouter">
             <Container>
               <Row>
                 <Col xs="6" md="3" lg="3" className="my-2">
-                  ПН-ПТ 08:00-20:00
+                  <span className="topbar-item">
+                    <FontAwesomeIcon icon={faClock} className="mr-1"/> ПН-ПТ 08:00-20:00
+                  </span>
                 </Col>
                 <Col xs="6" md="3" lg="3" className="my-2">
-                  <a className="topbar-item" href="mailto:riomedia@ramble.ru">riomedia@ramble.ru</a>
+                  <a className="topbar-item" href="mailto:riomedia@ramble.ru">
+                    <FontAwesomeIcon icon={faEnvelopeSquare} className="mr-1"/>
+                    riomedia@ramble.ru
+                  </a>
                 </Col>
                 <Col xs="6" md="3" lg="3" className="my-2">
-                  <a className="topbar-item tel" href="tel:+37529673222">+375 (29) 67-32-22</a>
+                  <a className="topbar-item tel" href="tel:+37529673222">
+                    <FontAwesomeIcon icon={faPhoneSquare} className="mr-1" />+375 (29) 67-32-22
+                  </a>
                 </Col>
                 <Col xs="6" md="3" lg="3" className="my-2">
                   <NavLink to="/contacts" className="topbar-item" onClick={_this.handleNavClick}>
+                    <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-1" />
                     Минск , ул. Дзержинского, дом 6
                   </NavLink>
                 </Col>

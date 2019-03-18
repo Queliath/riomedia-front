@@ -1,6 +1,6 @@
 import { HomePage } from "../pages/HomePage";
 import { AboutPage } from "../pages/AboutPage";
-import { ClientList } from "../clients/ClientsList";
+import { ClientList } from "../pages/clients/ClientsList";
 
 export const routes = [
   {

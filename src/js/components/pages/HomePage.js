@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {
-  Jumbotron,
-  Button,
   Row,
   Col,
   Container,
@@ -9,7 +7,7 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
+  CarouselCaption,
 } from 'reactstrap';
 
 const items = [
@@ -78,36 +76,17 @@ class HomePage extends Component {
     return (
       <div className="rio-home">
         <Carousel className="bg-dark d-none d-sm-block"
-          activeIndex={activeIndex}
-          next={this.next}
-          previous={this.previous}
+                  activeIndex={activeIndex}
+                  next={this.next}
+                  previous={this.previous}
         >
           <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
           {slides}
           <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
           <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
         </Carousel>
-        <Container>
-          <Row>
-            <Col xs="12" md="7" lg="7" >
-              <Jumbotron>
-                <h1 className="display-5">Изготовление наружной рекламы в Минске</h1>
-                <p>
-                  Человек, который дорожит своим бизнесом,
-                  ни за что в жизни не станет экономить на рекламе.
-                  Но такое многообразие способов рекламы товаров и услуг заставляет людей долго анализировать
-                  и выбирать изготовителя.
-                </p>
-                <hr className="my-2" />
-                <p>Рекламно - производственная компания «РиоМедиа»
-                  специализируется на изготовлении и размещении наружной рекламы в Минске.
-                  Мы имеем собственную производственную базу и производим объекты наружной рекламы из современных и долговечных материалов.</p>
-                <p className="lead">
-                  <Button color="primary">Заказать рекламу</Button>
-                </p>
-              </Jumbotron>
-            </Col>
-          </Row>
+        <Container className="mt-2">
+          <h2 className="page-block-title">«РИОМЕДИА» это: </h2>
         </Container>
       </div>
     );
